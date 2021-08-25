@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}E-Learning Website{% endblock %}</title>
+    <script src="https://use.fontawesome.com/401a908710.js"></script>
+    <!--bootstrap-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Roboto+Slab:300,400' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/bases.css') }}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/animate.css') }}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/css/loader.css') }}"
+    />
+
+</head>
+
+<body>
+    <!--Preloader-->
+    <div class="loader_bg">
+        <div class="loader">
+            <div>
+                <ul>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 90 120" fill="currentColor">
+                            <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
+                        </svg>
+                    </li>
+                </ul>
+            </div>
+            <span style="text-shadow: 1px 1px 2px black;font-family: pacifico;">&lt;Loading | Academia&gt;</span>
+        </div>
+    </div>
+    <!-- Back to top button -->
+    <a id="button"></a>
+    <!--navbar-->
+    <section class="navigation header">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#!" style="text-shadow: 1px 1px 2px black;font-size: 30px;">Academia
+                    <span style="font-size:16px;">&lt;Online Education | Learning&gt;</span></a>
+            </div>
+            <nav>
+                <div class="nav-mobile"><a id="navbar-toggle" href="#!"><span></span></a></div>
+                <ul class="nav-list">
+                    <li>
+                        <a href="#!" style="text-shadow: 1px 1px 2px black;">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="#!" style="text-shadow: 1px 1px 2px black;">Cours</a>
+                        <ul class="navbar-dropdown">
+                            <li>
+                                <a href="#!" style="text-shadow: 1px 1px 2px black;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Baccalauréat</a>
+                            </li>
+                            <li>
+                                <a href="#!" style="text-shadow: 1px 1px 2px black;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Prépatatoire</a>
+                            </li>
+                            <li>
+                                <a href="#!" style="text-shadow: 1px 1px 2px black;"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> Licence</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#!" style="text-shadow: 1px 1px 2px black;">Équipe</a>
+
+                    </li>
+                    <li>
+                        <a href="#!" style="text-shadow: 1px 1px 2px black;">Prix</a>
+                    </li>
+                    <li>
+                        <a href="#!" style="text-shadow: 1px 1px 2px black;">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <br>
+    <div class="section">
+        <section class="hero-wrap" style="background-image: url('{{url_for('static',filename = 'img/img.jpg')}}');height: 900px;background-repeat: no-repeat;background-size: cover;z-index: 1;background-attachment: fixed; ">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-center">
+                    <div class="col-lg-5">
+                        <div class="text mt-5 pt-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                            <span class="subheading" style="color:white;">
+                                <h4 style="color:white;font-weight: bold;text-shadow: 1px 1px 2px black;">Welcome to Academia</h4>
+                            </span>
+                            <h1 class="mb-4" style="color:white;text-shadow: 1px 1px 2px black;">Best Online Education Expertise </h1>
+                            <p class="mb-4" style="color:white;font-size: 20px;text-shadow: 1px 1px 2px black;">Join for free and learn online. Build skills with courses from top universities. Bring flexible, affordable, job-relevant online learning to individuals. Register now. Top Quality Course. The Best Team of Teachers.</p>
+                            <p><a href="#" class="btn btn-primary p-4 py-3" style="text-shadow: 1px 1px 2px black;">Get Started Now! <i class="fa fa-arrow-right"></i></a>
+                                <a href="#" class="btn btn-warning p-4 py-3" style="text-shadow: 1px 1px 2px black;">View Course <i class="fa fa-arrow-right"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="row g-xl-5">
+            <div class="col-md-6 d-flex align-items-stretch aos-init aos-animate" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+
+                <div class=" img w-100" style="background-image: url('{{url_for('static',filename = 'img/about.png')}}');background-repeat: no-repeat;background-size: contain;background-position: center center;">
+                </div>
+            </div>
+            <div class="col-md-6 heading-section d-flex align-items-center aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                <div class="mt-0 my-lg-5 py-5">
+                    <span class="subheading" style="font-weight: bold;">Learn Anything</span>
+                    <h2 class="mb-2" style="text-align: left;text-shadow: 1px 1px 1px black;">Benefits About Online Learning Expertise</h2>
+                    <div class="row mt-4 g-lg-2">
+                        <div class="col-lg-12 d-flex align-items-stretch services-wrap">
+                            <div class="services d-flex">
+                                <div class="icon"><span><i class="fas fa-book-reader"></i></span></div>
+                                <div class="text">
+                                    <h2 style="text-align: left;text-shadow: 1px 1px 1px black;">Online Courses</h2>
+                                    <p class="mb-0">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex align-items-stretch services-wrap">
+                            <div class="services d-flex">
+                                <div class="icon"><span><i class="fas fa-graduation-cap"></i></span></div>
+                                <div class="text">
+                                    <h2 style="text-align: left;text-shadow: 1px 1px 1px black;">Earn A Certificates</h2>
+                                    <p class="mb-0">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 d-flex align-items-stretch services-wrap">
+                            <div class="services d-flex">
+                                <div class="icon"><span><i class="fas fa-chalkboard-teacher"></i></span></div>
+                                <div class="text">
+                                    <h2 style="text-align: left;text-shadow: 1px 1px 1px black;">Learn with Expert</h2>
+                                    <p class="mb-0">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider">
+            <div class="container slidercontent">
+                <h1 class="hero" style="font-weight: bold;">Try our free trial course</h1>
+                <div class="call"><a href="#" style="font-weight: bold;font-size: 20px; " class="btn btn-primary p-4 py-3">Join now!</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <br>
+        <div class="text-center">
+            <h1>Our Courses</h1>
+            <h2>Explore Our Popular Online Courses</h2>
+        </div>
+        <section class="pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mb-3">Popular Online Courses </h3>
+                    </div>
+                    <div class="col-6 text-end">
+                        <a class="btn btn-outline-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                            <i class="fa fa-arrow-left"></i>
+                        </a>
+                        <a class="btn btn-outline-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
+                            <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Optique Géométrique</h4>
+
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Ce cours rappelle les bases de l’optique géométrique
+                                                        </summary> : la
+                                                        notion de rayon lumineux, d’indice de réfraction, les lois de la réflexion,
+                                                        de la réfraction et de la dispersion.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3" role="button">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Mécanique Quantique</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Qu'est-ce que la mécanique quantique ? À quoi sert-elle ?
+                                                        </summary>
+
+
+                                                        La mécanique quantique est la théorie mathématique et physique décrivant la structure et l'évolution dans le temps et l'espace des phénomènes physiques à l'échelle de l'atome et en dessous.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Mathématiques </div>
+                                                    <h4 class="card-title">Algèbre linéaire</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>L'algèbre linéaire est la branche des mathématiques
+                                                        </summary> qui s'intéresse aux Les vecteurs, les espaces vectoriels, les matrices, les transformations.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Optique Géométrique</h4>
+
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Ce cours rappelle les bases de l’optique géométrique
+                                                        </summary> : la
+                                                        notion de rayon lumineux, d’indice de réfraction, les lois de la réflexion,
+                                                        de la réfraction et de la dispersion.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Mécanique Quantique</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Qu'est-ce que la mécanique quantique ? À quoi sert-elle ?
+                                                        </summary>
+
+
+                                                        La mécanique quantique est la théorie mathématique et physique décrivant la structure et l'évolution dans le temps et l'espace des phénomènes physiques à l'échelle de l'atome et en dessous.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Mathématiques </div>
+                                                    <h4 class="card-title">Algèbre linéaire</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>L'algèbre linéaire est la branche des mathématiques
+                                                        </summary> qui s'intéresse aux Les vecteurs, les espaces vectoriels, les matrices, les transformations.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row">
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Optique Géométrique</h4>
+
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Ce cours rappelle les bases de l’optique géométrique
+                                                        </summary> : la
+                                                        notion de rayon lumineux, d’indice de réfraction, les lois de la réflexion,
+                                                        de la réfraction et de la dispersion.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Physique</div>
+                                                    <h4 class="card-title">Mécanique Quantique</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>Qu'est-ce que la mécanique quantique ? À quoi sert-elle ?
+                                                        </summary>
+
+
+                                                        La mécanique quantique est la théorie mathématique et physique décrivant la structure et l'évolution dans le temps et l'espace des phénomènes physiques à l'échelle de l'atome et en dessous.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 mb-3">
+                                            <div class="box card" style="border: none;">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
+                                                <div class="card-body">
+                                                    <div id="cat">
+                                                        Mathématiques </div>
+                                                    <h4 class="card-title">Algèbre linéaire</h4>
+                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
+                                                    <!-- Rating Star Using Font Awesome Icons -->
+                                                    <div class="row">
+                                                        <div class="rating col-md-6 mb-4.5">
+                                                            <i class="fas fa-star checked" title="1 star"></i>
+                                                            <i class="fas fa-star checked" title="2 star"></i>
+                                                            <i class="fas fa-star checked" title="3 star"></i>
+                                                            <i class="fas fa-star" title="4 star"></i>
+                                                            <i class="fas fa-star" title="5 star"></i>
+                                                            (5.0)
+                                                        </div>
+                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
+                                                    </div>
+                                                    <p class="card-text">
+                                                    <details>
+                                                        <summary>L'algèbre linéaire est la branche des mathématiques
+                                                        </summary> qui s'intéresse aux Les vecteurs, les espaces vectoriels, les matrices, les transformations.</p>
+                                                    </details>
+                                                </div>
+                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
+
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </section>
+
+
+    <div class="section bg">
+        <div class="container">
+            <h1>COURSES</h1>
+            <h2>Browse Our Online Courses</h2>
+            <!--block-->
+            <div class="cours bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                                        <h3>Mathématique</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                                        <h3>Physique</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
+                                        <h3>Science</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                                        <h3>Informatique</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                                        <h3>Histoire</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
+                                        <h3>Français</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end block-->
+        </div>
+    </div>
+    <!--testimonial-->
+    <div class="test">
+        <section class="testimonial">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 d-none d-lg-block">
+                        <ol class="carousel-indicators tabs">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-01-179x179.png" class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-02-306x306.png" class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                                <figure>
+                                    <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-03-179x179.png" class="img-fluid" alt="">
+                                </figure>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                        <div id="carouselExampleIndicators" data-interval="false" class="carousel slide" data-ride="carousel">
+                            <h3>WHAT OUR CLIENTS SAY</h3>
+                            <h1>TESTIMONIALS</h1>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="quote-wrapper">
+                                        <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                        <h3>peter lee</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="quote-wrapper">
+                                        <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                        <h3>peter lee</h3>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="quote-wrapper">
+                                        <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                        <h3>peter lee</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <ol class="carousel-indicators indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--end test-->
+    <!--price-->
+
+    <div class="pricing">
+        <div class="container">
+
+            <h1>Pricing &amp; Packages</h1>
+            <p style="text-align: center;font-size: 30px; font-family: 'Roboto Slab', sans-serif;font-weight: 400;">OUR PRICING</p>
+
+            <br>
+            <section>
+                <div class="average">
+                    <div class="price-package">
+                        <div class="package-name">
+                            <h3>BASIC PLAN</h3>
+                        </div>
+                        <div class="package-price">
+                            <div class="package-arrow"></div>
+                            <div class="price">
+                                <sup>R</sup>
+                                <span>899</span>
+                            </div>
+                            <div class="term">
+                                <sup>.99</sup>
+                                <span>/once off</span>
+                            </div>
+                            <div class="package-features">
+                                <div class="package-arrow"></div>
+                                <ul>
+                                    <li>1 Page</li>
+                                </ul>
+                                <button class="sign-up">
+                                    <h3>sign up now!</h3>
+                                </button>
+                            </div>
+                            <!--package-features-->
+                        </div>
+                        <!--package-price-->
+                    </div>
+                    <!--price-package-->
+                </div>
+                <!--Economical-->
+
+                <div class="average">
+                    <div class="price-package">
+                        <div class="package-name">
+                            <h3>BEGINNER PLAN</h3>
+                        </div>
+                        <div class="package-price">
+                            <div class="package-arrow"></div>
+                            <div class="price">
+                                <sup>R</sup>
+                                <span>1,119</span>
+                            </div>
+                            <div class="term">
+                                <sup>.99</sup>
+                                <span>/per month *3</span>
+                            </div>
+                            <div class="package-features">
+                                <div class="package-arrow"></div>
+                                <ul>
+                                    <li>3 Pages</li>
+                                    <li>Custom Design</li>
+                                    <li>Search Engine Optimization</li>
+                                    <li>Basic Google Adword</li>
+                                    <li>10 Key words</li>
+                                    <li>Contact Form</li>
+                                </ul>
+                                <button class="sign-up">
+                                    <h3>sign up now!</h3>
+                                </button>
+                            </div>
+                            <!--package-features-->
+                        </div>
+                        <!--package-price-->
+                    </div>
+                    <!--price-package-->
+                </div>
+                <!--average-->
+
+                <div class="special">
+                    <div class="price-package">
+                        <div class="package-name">
+                            <h3>PREMIUM PLAN</h3>
+                        </div>
+                        <div class="package-price">
+                            <div class="package-arrow"></div>
+                            <div class="price">
+                                <sup>R</sup>
+                                <span>1,999</span>
+                            </div>
+                            <div class="term">
+                                <sup>.99</sup>
+                                <span>/per month *3</span>
+                            </div>
+                            <div class="package-features">
+                                <div class="package-arrow"></div>
+                                <ul>
+                                    <li>6 Pages</li>
+                                    <li>Custom Design</li>
+                                    <li>Search Engine Optimization</li>
+                                    <li>Pay Per Click</li>
+                                    <li>Advanced Google Adword</li>
+                                    <li>25 Key words</li>
+                                    <li>Contact Form</li>
+                                    <li>Free Digital Marketing material</li>
+                                    <button class="sign-up">
+                                        <h3>sign up now!</h3>
+                                    </button>
+                            </div>
+                            <!--package-features-->
+                        </div>
+                        <!--package-price-->
+                    </div>
+                    <!--price-package-->
+                </div>
+                <!--special-->
+
+                <div class="superduper">
+                    <div class="price-package">
+                        <div class="package-name">
+                            <h3>ULTIMATE PLAN</h3>
+                        </div>
+                        <div class="package-price">
+                            <div class="package-arrow"></div>
+                            <div class="price">
+                                <sup>$</sup>
+                                <span>99</span>
+                            </div>
+                            <div class="term">
+                                <sup>.99</sup>
+                                <span>/month</span>
+                            </div>
+                            <div class="package-features">
+                                <div class="package-arrow"></div>
+                                <ul>
+                                    <li><em>Super Duper Feature</em></li>
+                                    <li>Special Feature 1</li>
+                                    <li>Special Feature 2</li>
+                                    <li>Average Feature 1</li>
+                                    <li>Average Feature 2</li>
+                                    <li>Average Feature 3</li>
+                                </ul>
+                                <button class="sign-up">
+                                    <h3>sign up now!</h3>
+                                </button>
+                            </div>
+                            <!--package-features-->
+                        </div>
+                        <!--package-price-->
+                    </div>
+                    <!--price-package-->
+                </div>
+                <!--superduper-->
+
+                <div class="all-plans">
+                    <div class="price-package">
+                        <div class="package-name">
+                            <h3>included in all plans</h3>
+                        </div>
+                        <div class="package-features">
+                            <div class="package-arrow"></div>
+                            <div class="all-plans-features">
+                                <text>Less Than Average Features</text>
+                                <text>Super Duper Support</text>
+                                <text>No Money Back Guarantee!</text>
+                            </div>
+                        </div>
+                    </div>
+                    <!--package-features-->
+                </div>
+                <!--price-package-->
+        </div>
+        <!--all-plans-->
+        </section>
+    </div>
+    </div>
+    <!--end price-->
+
+    <div class="footer1">
+        <div class="footer1-left col-md-4 col-sm-6">
+            <p class="about">
+                <span> About the company</span> Ut congue augue non tellus bibendum, in varius tellus condimentum. In scelerisque nibh tortor, sed rhoncus odio condimentum in. Sed sed est ut sapien ultrices eleifend. Integer tellus est, vehicula eu lectus tincidunt,
+                ultricies feugiat leo. Suspendisse tellus elit, pharetra in hendrerit ut, aliquam quis augue. Nam ut nibh mollis, tristique ante sed, viverra massa.
+            </p>
+            <div class="icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer1-center col-md-4 col-sm-6">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span> Street name and number</span> City, Country</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p> (+00) 0000 000 000</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="#"> office@company.com</a></p>
+            </div>
+        </div>
+        <div class="footer1-right col-md-4 col-sm-6">
+            <h2> Company<span> logo</span></h2>
+            <p class="menu">
+                <a href="#"> Home</a> |
+                <a href="#"> About</a> |
+                <a href="#"> Services</a> |
+                <a href="#"> Portfolio</a> |
+                <a href="#"> News</a> |
+                <a href="#"> Contact</a>
+            </p>
+            <p class="name"> Company Name &copy; 2021</p>
+        </div>
+        <hr>
+        <p style="text-align: center;">Copyright Design <a href="#">Arfaoui Mehdi</a> © 2021. All rights reserved.</p>
+    </div>
+
+    <script>
+        (function(w, d) {
+            w.CollectId = "610faa8d36b5b233b034810d";
+            var h = d.head || d.getElementsByTagName("head")[0];
+            var s = d.createElement("script");
+            s.setAttribute("type", "text/javascript");
+            s.async = true;
+            s.setAttribute("src", "https://collectcdn.com/launcher.js");
+            h.appendChild(s);
+        })(window, document);
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='/js/index.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='/js/loader.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
