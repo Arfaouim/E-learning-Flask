@@ -4423,7 +4423,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5,
     font-weight: 500; }
 
 .hero-wrap {
-  height: 100vh;
+  height: 900px;
   min-height: 100%;
   position: relative;
   background-size: cover;
