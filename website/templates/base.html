@@ -14,6 +14,10 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
 
+      
+        <!-- carousel -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
     <link
       type="text/css"
       rel="stylesheet"
@@ -129,8 +133,10 @@
                             </span>
                             <h1 class="mb-4" style="color:white;text-shadow: 1px 1px 2px black;">Best Online Education Expertise </h1>
                             <p class="mb-4" style="color:white;font-size: 20px;text-shadow: 1px 1px 2px black;">Join for free and learn online. Build skills with courses from top universities. Bring flexible, affordable, job-relevant online learning to individuals. Register now. Top Quality Course. The Best Team of Teachers.</p>
-                            <p><a href="#" class="btn btn-primary p-4 py-3" style="text-shadow: 1px 1px 2px black;">Get Started Now! <i class="fa fa-arrow-right"></i></a>
-                                <a href="#" class="btn btn-warning p-4 py-3" style="text-shadow: 1px 1px 2px black;">View Course <i class="fa fa-arrow-right"></i></a>
+                            <p>
+                                <a href="#" class="button" style="vertical-align:middle"><span>Get Started Now! </span></a>
+                                <a href="#" class="button" style="vertical-align:middle"><span>View Course </span></a>
+
                             </p>
                         </div>
                     </div>
@@ -182,7 +188,7 @@
         <div class="slider">
             <div class="container slidercontent">
                 <h1 class="hero" style="font-weight: bold;">Try our free trial course</h1>
-                <div class="call"><a href="#" style="font-weight: bold;font-size: 20px; " class="btn btn-primary p-4 py-3">Join now!</a></div>
+                <div ><a href="#" class="button" style="vertical-align:middle"><span>Join Now! </span></a></div>
             </div>
         </div>
     </div>
@@ -198,23 +204,23 @@
                     <div class="col-6">
                         <h3 class="mb-3">Popular Online Courses </h3>
                     </div>
-                    <div class="col-6 text-end">
-                        <a class="btn btn-outline-primary mb-3 mr-1" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                            <i class="fa fa-arrow-left"></i>
-                        </a>
-                        <a class="btn btn-outline-primary mb-3 " href="#carouselExampleIndicators2" role="button" data-slide="next">
-                            <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </div>
-                    <div class="col-12">
-                        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 
-                            <div class="carousel-inner">
+                
 
-                                <div class="carousel-item active">
-                                    <div class="row">
+                    <section class="blog_section" style="padding: 0;">
+                        <div class="container"style="padding: 0;">
+                            <div class="blog_content" style="padding: 0;">
+                                <div class="owl-carousel owl-theme">
+                
+                                    
+                        
 
-                                        <div class="col-md-4 mb-3">
+                            
+
+                                
+                                    
+
+                                          <div class="blog_item">
                                             <div class="box card" style="border: none;">
                                                 <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
                                                 <div class="card-body">
@@ -250,9 +256,9 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4 mb-3">
+                                        <div class="blog_item">
                                             <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
+                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}" style="width:500px;height:210px;">
                                                 <div class="card-body">
                                                     <div id="cat">
                                                         Physique</div>
@@ -284,7 +290,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-4 mb-3">
+                                        <div class="blog_item">
                                             <div class="box card" style="border: none;">
                                                 <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
                                                 <div class="card-body">
@@ -317,228 +323,19 @@
 
 
 
+                                    
+
+                                          
+
+
+
+                                    
+
+                               
                                     </div>
-
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Physique</div>
-                                                    <h4 class="card-title">Optique Géométrique</h4>
-
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>Ce cours rappelle les bases de l’optique géométrique
-                                                        </summary> : la
-                                                        notion de rayon lumineux, d’indice de réfraction, les lois de la réflexion,
-                                                        de la réfraction et de la dispersion.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Physique</div>
-                                                    <h4 class="card-title">Mécanique Quantique</h4>
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>Qu'est-ce que la mécanique quantique ? À quoi sert-elle ?
-                                                        </summary>
-
-
-                                                        La mécanique quantique est la théorie mathématique et physique décrivant la structure et l'évolution dans le temps et l'espace des phénomènes physiques à l'échelle de l'atome et en dessous.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Mathématiques </div>
-                                                    <h4 class="card-title">Algèbre linéaire</h4>
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>L'algèbre linéaire est la branche des mathématiques
-                                                        </summary> qui s'intéresse aux Les vecteurs, les espaces vectoriels, les matrices, les transformations.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-
-                                </div>
-                                <div class="carousel-item">
-                                    <div class="row">
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/optique.jpg')}}" style="width:500px;height:210px;">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Physique</div>
-                                                    <h4 class="card-title">Optique Géométrique</h4>
-
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>Ce cours rappelle les bases de l’optique géométrique
-                                                        </summary> : la
-                                                        notion de rayon lumineux, d’indice de réfraction, les lois de la réflexion,
-                                                        de la réfraction et de la dispersion.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/qm.jpg')}}">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Physique</div>
-                                                    <h4 class="card-title">Mécanique Quantique</h4>
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>Qu'est-ce que la mécanique quantique ? À quoi sert-elle ?
-                                                        </summary>
-
-
-                                                        La mécanique quantique est la théorie mathématique et physique décrivant la structure et l'évolution dans le temps et l'espace des phénomènes physiques à l'échelle de l'atome et en dessous.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-4 mb-3">
-                                            <div class="box card" style="border: none;">
-                                                <img class="img-fluid" alt="100%x280" src="{{url_for('static',filename = 'img/algeber.jpg')}}" style="width:500px;height:210px;">
-                                                <div class="card-body">
-                                                    <div id="cat">
-                                                        Mathématiques </div>
-                                                    <h4 class="card-title">Algèbre linéaire</h4>
-                                                    <p style="font-color:gray;font-size: 10px;text-decoration-line: underline;">by Mr.Author</p>
-                                                    <!-- Rating Star Using Font Awesome Icons -->
-                                                    <div class="row">
-                                                        <div class="rating col-md-6 mb-4.5">
-                                                            <i class="fas fa-star checked" title="1 star"></i>
-                                                            <i class="fas fa-star checked" title="2 star"></i>
-                                                            <i class="fas fa-star checked" title="3 star"></i>
-                                                            <i class="fas fa-star" title="4 star"></i>
-                                                            <i class="fas fa-star" title="5 star"></i>
-                                                            (5.0)
-                                                        </div>
-                                                        <div class="col-md-6 mb-4.5"><i class="fa fa-user" aria-hidden="true"></i> 12</div>
-                                                    </div>
-                                                    <p class="card-text">
-                                                    <details>
-                                                        <summary>L'algèbre linéaire est la branche des mathématiques
-                                                        </summary> qui s'intéresse aux Les vecteurs, les espaces vectoriels, les matrices, les transformations.</p>
-                                                    </details>
-                                                </div>
-                                                <a href="#" class="btn btn-outline-primary p-4 py-3">Enroll Now! <i class="fa fa-arrow-right"></i></a>
-
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
-
                                 </div>
                             </div>
+                    </section>
                         </div>
                     </div>
                 </div>
@@ -552,11 +349,15 @@
             <h1>COURSES</h1>
             <h2>Browse Our Online Courses</h2>
             <!--block-->
-            <div class="cours bg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="box card">
+    <section class="blog_section" style="padding: 0;">
+        <div class="container"style="padding: 0;">
+            <div class="blog_content" style="padding: 0;">
+                <div class="owl-carousel owl-theme">
+
+                    <div class="blog_item">
+                        <div class="cours bg">
+                            <div class="container">
+                        <div class="box card">
                                 <div class="face face1">
                                     <div class="content">
                                         <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
@@ -571,77 +372,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
-                            <div class="box card">
+                    </div>
+                    </div>  
+
+                    <div class="blog_item">
+                        <div class="cours bg">
+                            <div class="container">
+                        <div class="box card">
                                 <div class="face face1">
                                     <div class="content">
                                         <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
-                                        <h3>Physique</h3>
-                                    </div>
-                                </div>
-                                <div class="face face2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="box card">
-                                <div class="face face1">
-                                    <div class="content">
-                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/code_128.png?raw=true">
-                                        <h3>Science</h3>
-                                    </div>
-                                </div>
-                                <div class="face face2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="col">
-                            <div class="box card">
-                                <div class="face face1">
-                                    <div class="content">
-                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                                        <h3>Informatique</h3>
-                                    </div>
-                                </div>
-                                <div class="face face2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="box card">
-                                <div class="face face1">
-                                    <div class="content">
-                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                                        <h3>Histoire</h3>
-                                    </div>
-                                </div>
-                                <div class="face face2">
-                                    <div class="content">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
-                                        <a href="#">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="box card">
-                                <div class="face face1">
-                                    <div class="content">
-                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/launch_128.png?raw=true">
-                                        <h3>Français</h3>
+                                        <h3>Mathématique</h3>
                                     </div>
                                 </div>
                                 <div class="face face2">
@@ -653,13 +394,60 @@
                             </div>
                         </div>
                     </div>
+                    </div>    
+
+                    <div class="blog_item">
+                        <div class="cours bg">
+                            <div class="container">
+                        <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                                        <h3>Mathématique</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>  
+
+                    <div class="blog_item">
+                        <div class="cours bg">
+                            <div class="container">
+                        <div class="box card">
+                                <div class="face face1">
+                                    <div class="content">
+                                        <img src="https://github.com/Jhonierpc/WebDevelopment/blob/master/CSS%20Card%20Hover%20Effects/img/design_128.png?raw=true">
+                                        <h3>Physics</h3>
+                                    </div>
+                                </div>
+                                <div class="face face2">
+                                    <div class="content">
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste veritatis provident at.</p>
+                                        <a href="#">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>  
+
                 </div>
             </div>
-            <!--end block-->
         </div>
-    </div>
+    </section>
+</div>
+</div>
+
+
     <!--testimonial-->
-    <div class="test">
+    <div class="test" style="padding-top: 0;">
         <section class="testimonial">
             <div class="container">
                 <div class="row">
@@ -952,8 +740,13 @@
         })(window, document);
 
     </script>
+    <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- bootstrap -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+     <!-- carousel -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
 
     <script
       type="text/javascript"
